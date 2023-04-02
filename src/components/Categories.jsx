@@ -41,9 +41,11 @@ function Categories({items, onClickItem}) {
     return (
         <div className="categories">
         <ul>
-          <li>Все</li>
-          {items.map((name, index) => (
-            <li className={activeItem === index ? 'active' : ''}
+          <li className={activeItem === null ? 'active' : ''} onClick={() => onSelectItem(null)}>Все</li>
+          {items && 
+            items.map((name, index) => (
+            <li 
+                 className={activeItem === index ? 'active' : ''}
                  onClick={() => onSelectItem(index) } 
                  key={`${name}_${index}`}>{name}</li>
             ))}
