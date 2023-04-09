@@ -2,45 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './scss/app.scss';
 import App from './App';
-import Header from './components/Header';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { createStore } from 'redux'
-
-
-function counterReducer(state = 0 , action) {
-  if(action.type === 'counter/incremented') {
-    return state + 1;
-  } 
-  if(action.type === 'counter/decremented') {
-    return state - 1;
-  } 
-  return state
-}
-
-const store = createStore(counterReducer)
-
-store.subscribe(() => console.log('Хранилище изменилось', store.getState()))
-
-
-
-console.log(store.getState());
-
-store.dispatch({ type: 'counter/incremented' })
-store.dispatch({ type: 'counter/incremented' })
-store.dispatch({ type: 'counter/incremented' })
-store.dispatch({ type: 'counter/decremented' })
-store.dispatch({ type: 'counter/incremented' })
-store.dispatch({ type: 'counter/decremented' })
-
+import store from './redux/store';
+import { Provider } from 'react-redux';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
     <Router>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </Router>
-  // </React.StrictMode>
 );
 
 
