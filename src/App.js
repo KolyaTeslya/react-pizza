@@ -9,7 +9,7 @@ function App() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-console.log(fetchPizzas());
+console.log(dispatch(fetchPizzas()));
   }, [])
  
   return (
