@@ -11,7 +11,7 @@ const categoryNames = [
   "Гриль",
   "Острые",
   "Закрытые",
-];
+]; 
 const sortItems = [
   { name: "популярности", type: "popular" },
   { name: "цене", type: "price" },
@@ -36,7 +36,7 @@ function Home() {
     <div className="container">
       <div className="content__top">
         <Categories activeCategory={category} 
-                    onClickItem={onSelectCategory} 
+                    onClickCategory={onSelectCategory} 
                     items={categoryNames} />
         <SortPopup items={sortItems} />
       </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import LoadingBlock from './LoadingBlock';
 
