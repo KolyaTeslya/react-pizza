@@ -20,7 +20,6 @@ const pizzas = (state = initialState, action) => {
         default: 
             return state;
     }
-
 }
 
 export default pizzas;
