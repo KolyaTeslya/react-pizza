@@ -7,7 +7,6 @@ import Button from "./Button";
 
 function Header() {
   const { totalPrice, totalCount } = useSelector(({ cart }) => cart);
-  console.log('heder rerender');
 
   return (
     <div className="header">
